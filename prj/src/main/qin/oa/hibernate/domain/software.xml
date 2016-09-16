@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- 指定包名, 禁用懒加载 -->
+<hibernate-mapping auto-import="true" default-lazy="false" package="qin.oa.hibernate.domain">
+
+    <!-- 软件实体类 -->
+    <class name="Software" table="qin_software6">
+        <id name="id" column="soft_id">
+            <generator class="uuid"/>
+        </id>
+
+        <!-- 名称 -->
+        <property name="soft_name" length="50" not-null="true"/>
+
+        <!-- 描述 -->
+        <property name="soft_description" length="3000"/>
+
+        <!-- 是否隐藏 -->
+        <property name="soft_isHidden" type="boolean"/>
+
+        <!-- 创建日期 -->
+        <property name="soft_createTime" type="date"/>
+
+        <!-- 类型 -->
+        <many-to-one name="soft_type" class="SoftType"/>
+
+        <!-- 位置 -->
+        <property name="soft_location" length="300" not-null="true"/>
+
+        <!-- 大小 -->
+        <property name="soft_size" length="90" not-null="true"/>
+
+        <!-- 打开方式 -->
+        <many-to-one name="soft_openWays" class="SoftOpenWays"/>
+    </class>
+
+    <!-- 软件类型类 -->
+    <class name="SoftType" table="qin_soft_type6">
+        <id name="id" column="soft_type_id">
+            <generator class="increment"/>
+        </id>
+
+        <!-- 名称 -->
+        <property name="soft_type_name" not-null="true" length="30"/>
+
+        <set name="softwareSet" cascade="delete">
+            <key column="soft_type_soft_id"></key>
+            <one-to-many class="Software"/>
+        </set>
+    </class>
+
+    <!-- 软件打开方式实体类 -->
+    <class name="SoftOpenWays" table="qin_soft_openWays6">
+        <id name="id" column="soft_open_id">
+            <generator class="increment"/>
+        </id>
+
+        <!-- 名称 -->
+        <property name="soft_openWays" not-null="true" length="100"/>
+
+        <set name="softwareSet" cascade="delete">
+            <key column="soft_type_soft_id"></key>
+            <one-to-many class="Software"/>
+        </set>
+    </class>
+
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
