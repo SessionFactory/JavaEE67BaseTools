@@ -201,4 +201,111 @@ public class Software implements SuperEntity65<String>
         this.soft_openWays = soft_openWays;
     }
     //endregion
+
+    //region 接收从界面传递过来的值
+
+    //region 是否隐藏
+    /**
+     * 是否隐藏
+     */
+    private String soft_isHidden2;
+
+    public String getSoft_isHidden2()
+    {
+        return soft_isHidden2;
+    }
+
+    public void setSoft_isHidden2(String soft_isHidden2)
+    {
+        this.soft_isHidden2 = soft_isHidden2;
+    }
+    //endregion
+
+    //region 创建时间
+    /**
+     * 创建时间
+     */
+    private String soft_createTime2;
+
+    public String getSoft_createTime2()
+    {
+        return soft_createTime2;
+    }
+
+    public void setSoft_createTime2(String soft_createTime2)
+    {
+        this.soft_createTime2 = soft_createTime2;
+    }
+    //endregion
+
+    //region 创建时间结束日期
+    private String soft_createTime3;
+
+    public String getSoft_createTime3()
+    {
+        return soft_createTime3;
+    }
+
+    public void setSoft_createTime3(String soft_createTime3)
+    {
+        this.soft_createTime3 = soft_createTime3;
+    }
+    //endregion
+
+    //region 软件类型
+    /**
+     * 软件类型
+     */
+    private String soft_type2;
+
+    public String getSoft_type2()
+    {
+        return soft_type2;
+    }
+
+    public void setSoft_type2(String soft_type2)
+    {
+        this.soft_type2 = soft_type2;
+    }
+    //endregion
+
+    //region 软件打开方式
+    /**
+     * 软件打开方式
+     */
+    private String soft_openWays2;
+
+    public String getSoft_openWays2()
+    {
+        return soft_openWays2;
+    }
+
+    public void setSoft_openWays2(String soft_openWays2)
+    {
+        this.soft_openWays2 = soft_openWays2;
+    }
+    //endregion
+
+    //endregion
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

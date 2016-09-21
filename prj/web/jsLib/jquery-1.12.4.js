@@ -40,15 +40,15 @@
         factory(global);
     }
 
-// Pass this if window is not defined yet
+    // Pass this if window is not defined yet
 }(typeof window !== "undefined" ? window : this, function (window, noGlobal)
 {
 
-// Support: Firefox 18+
-// Can't be in strict mode, several libs including ASP.NET trace
-// the stack via arguments.caller.callee and Firefox dies if
-// you try to trace through "use strict" call chains. (#13335)
-//"use strict";
+    // Support: Firefox 18+
+    // Can't be in strict mode, several libs including ASP.NET trace
+    // the stack via arguments.caller.callee and Firefox dies if
+    // you try to trace through "use strict" call chains. (#13335)
+    //"use strict";
     var deletedIds = [];
 
     var document = window.document;
@@ -640,10 +640,10 @@
         support: support
     });
 
-// JSHint would error on this code due to the Symbol not being defined in ES5.
-// Defining this global in .jshintrc would create a danger of using the global
-// unguarded in another place, it seems safer to just disable JSHint for these
-// three lines.
+    // JSHint would error on this code due to the Symbol not being defined in ES5.
+    // Defining this global in .jshintrc would create a danger of using the global
+    // unguarded in another place, it seems safer to just disable JSHint for these
+    // three lines.
     /* jshint ignore: start */
     if (typeof Symbol === "function")
     {
@@ -651,7 +651,7 @@
     }
     /* jshint ignore: end */
 
-// Populate the class2type map
+    // Populate the class2type map
     jQuery.each("Boolean Number String Function Array Date RegExp Object Error Symbol".split(" "),
         function (i, name)
         {
@@ -849,7 +849,7 @@
                     setDocument();
                 };
 
-// Optimize for push.apply( _, NodeList )
+            // Optimize for push.apply( _, NodeList )
             try
             {
                 push.apply(
@@ -1228,7 +1228,7 @@
                 return context && typeof context.getElementsByTagName !== "undefined" && context;
             }
 
-// Expose support vars for convenience
+            // Expose support vars for convenience
             support = Sizzle.support = {};
 
             /**
@@ -2437,7 +2437,7 @@
 
             Expr.pseudos["nth"] = Expr.pseudos["eq"];
 
-// Add button/input type pseudos
+            // Add button/input type pseudos
             for (i in {radio: true, checkbox: true, file: true, password: true, image: true})
             {
                 Expr.pseudos[i] = createInputPseudo(i);
@@ -2447,7 +2447,7 @@
                 Expr.pseudos[i] = createButtonPseudo(i);
             }
 
-// Easy API for creating new setFilters
+            // Easy API for creating new setFilters
             function setFilters()
             {
             }
@@ -3114,29 +3114,29 @@
                 return results;
             };
 
-// One-time assignments
+            // One-time assignments
 
-// Sort stability
+            // Sort stability
             support.sortStable = expando.split("").sort(sortOrder).join("") === expando;
 
-// Support: Chrome 14-35+
-// Always assume duplicates if they aren't passed to the comparison function
+            // Support: Chrome 14-35+
+            // Always assume duplicates if they aren't passed to the comparison function
             support.detectDuplicates = !!hasDuplicate;
 
-// Initialize against the default document
+            // Initialize against the default document
             setDocument();
 
-// Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
-// Detached nodes confoundingly follow *each other*
+            // Support: Webkit<537.32 - Safari 6.0.3/Chrome 25 (fixed in Chrome 27)
+            // Detached nodes confoundingly follow *each other*
             support.sortDetached = assert(function (div1)
             {
                 // Should return 1, but returns 4 (following)
                 return div1.compareDocumentPosition(document.createElement("div")) & 1;
             });
 
-// Support: IE<8
-// Prevent attribute/property "interpolation"
-// http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
+            // Support: IE<8
+            // Prevent attribute/property "interpolation"
+            // http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
             if (!assert(function (div)
                 {
                     div.innerHTML = "<a href='#'></a>";
@@ -3152,8 +3152,8 @@
                 });
             }
 
-// Support: IE<9
-// Use defaultValue in place of getAttribute("value")
+            // Support: IE<9
+            // Use defaultValue in place of getAttribute("value")
             if (!support.attributes || !assert(function (div)
                 {
                     div.innerHTML = "<input/>";
@@ -3170,8 +3170,8 @@
                 });
             }
 
-// Support: IE<9
-// Use getAttributeNode to fetch booleans when getAttribute lies
+            // Support: IE<9
+            // Use getAttributeNode to fetch booleans when getAttribute lies
             if (!assert(function (div)
                 {
                     return div.getAttribute("disabled") == null;
@@ -3247,7 +3247,7 @@
 
     var risSimple = /^.[^:#\[\.,]*$/;
 
-// Implement the identical functionality for filter and not
+    // Implement the identical functionality for filter and not
     function winnow(elements, qualifier, not)
     {
         if (jQuery.isFunction(qualifier))
@@ -3358,10 +3358,10 @@
     });
 
 
-// Initialize a jQuery object
+    // Initialize a jQuery object
 
 
-// A central reference to the root jQuery(document)
+    // A central reference to the root jQuery(document)
     var rootjQuery,
 
         // A simple way to check for HTML strings
@@ -3510,10 +3510,10 @@
             return jQuery.makeArray(selector, this);
         };
 
-// Give the init function the jQuery prototype for later instantiation
+    // Give the init function the jQuery prototype for later instantiation
     init.prototype = jQuery.fn;
 
-// Initialize central reference
+    // Initialize central reference
     rootjQuery = jQuery(document);
 
 
@@ -3719,7 +3719,7 @@
     var rnotwhite = ( /\S+/g );
 
 
-// Convert String-formatted options into Object-formatted ones
+    // Convert String-formatted options into Object-formatted ones
     function createOptions(options)
     {
         var object = {};
@@ -4164,7 +4164,7 @@
     });
 
 
-// The deferred used on DOM ready
+    // The deferred used on DOM ready
     var readyList;
 
     jQuery.fn.ready = function (fn)
@@ -4348,12 +4348,12 @@
         return readyList.promise(obj);
     };
 
-// Kick off the DOM ready check even if the user does not
+    // Kick off the DOM ready check even if the user does not
     jQuery.ready.promise();
 
 
-// Support: IE<9
-// Iteration over object's inherited properties before its own
+    // Support: IE<9
+    // Iteration over object's inherited properties before its own
     var i;
     for (i in jQuery(support))
     {
@@ -4361,11 +4361,11 @@
     }
     support.ownFirst = i === "0";
 
-// Note: most support tests are defined in their respective modules.
-// false until the test is run
+    // Note: most support tests are defined in their respective modules.
+    // false until the test is run
     support.inlineBlockNeedsLayout = false;
 
-// Execute ASAP in case we need to set body.style.zoom
+    // Execute ASAP in case we need to set body.style.zoom
     jQuery(function ()
     {
 
@@ -4487,7 +4487,7 @@
         return data;
     }
 
-// checks a cache object for emptiness
+    // checks a cache object for emptiness
     function isEmptyDataObject(obj)
     {
         var name;
@@ -5154,8 +5154,8 @@
     }
 
 
-// Multifunctional method to get and set values of a collection
-// The value/s can optionally be executed if it's a function
+    // Multifunctional method to get and set values of a collection
+    // The value/s can optionally be executed if it's a function
     var access = function (elems, fn, key, value, chainable, emptyGet, raw)
     {
         var i = 0,
@@ -5320,7 +5320,7 @@
     })();
 
 
-// We have to close these tags to support XHTML (#13200)
+    // We have to close these tags to support XHTML (#13200)
     var wrapMap = {
         option: [1, "<select multiple='multiple'>", "</select>"],
         legend: [1, "<fieldset>", "</fieldset>"],
@@ -5338,7 +5338,7 @@
         _default: support.htmlSerialize ? [0, "", ""] : [1, "X<div>", "</div>"]
     };
 
-// Support: IE8-IE9
+    // Support: IE8-IE9
     wrapMap.optgroup = wrapMap.option;
 
     wrapMap.tbody = wrapMap.tfoot = wrapMap.colgroup = wrapMap.caption = wrapMap.thead;
@@ -5379,7 +5379,7 @@
     }
 
 
-// Mark scripts as having already been evaluated
+    // Mark scripts as having already been evaluated
     function setGlobalEval(elems, refElements)
     {
         var elem,
@@ -5601,8 +5601,8 @@
         return false;
     }
 
-// Support: IE9
-// See #13393 for more info
+    // Support: IE9
+    // See #13393 for more info
     function safeActiveElement()
     {
         try
@@ -6516,8 +6516,8 @@
         this[jQuery.expando] = true;
     };
 
-// jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+    // jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
+    // http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
     jQuery.Event.prototype = {
         constructor: jQuery.Event,
         isDefaultPrevented: returnFalse,
@@ -6583,14 +6583,14 @@
         }
     };
 
-// Create mouseenter/leave events using mouseover/out and event-time checks
-// so that event delegation works in jQuery.
-// Do the same for pointerenter/pointerleave and pointerover/pointerout
-//
-// Support: Safari 7 only
-// Safari sends mouseenter too often; see:
-// https://code.google.com/p/chromium/issues/detail?id=470258
-// for the description of the bug (it existed in older Chrome versions as well).
+    // Create mouseenter/leave events using mouseover/out and event-time checks
+    // so that event delegation works in jQuery.
+    // Do the same for pointerenter/pointerleave and pointerover/pointerout
+    //
+    // Support: Safari 7 only
+    // Safari sends mouseenter too often; see:
+    // https://code.google.com/p/chromium/issues/detail?id=470258
+    // for the description of the bug (it existed in older Chrome versions as well).
     jQuery.each({
         mouseenter: "mouseover",
         mouseleave: "mouseout",
@@ -6622,7 +6622,7 @@
         };
     });
 
-// IE submit delegation
+    // IE submit delegation
     if (!support.submit)
     {
 
@@ -6693,7 +6693,7 @@
         };
     }
 
-// IE change delegation and checkbox/radio fix
+    // IE change delegation and checkbox/radio fix
     if (!support.change)
     {
 
@@ -6772,14 +6772,14 @@
         };
     }
 
-// Support: Firefox
-// Firefox doesn't have focus(in | out) events
-// Related ticket - https://bugzilla.mozilla.org/show_bug.cgi?id=687787
-//
-// Support: Chrome, Safari
-// focus(in | out) events fire after focus & blur events,
-// which is spec violation - http://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
-// Related ticket - https://code.google.com/p/chromium/issues/detail?id=449857
+    // Support: Firefox
+    // Firefox doesn't have focus(in | out) events
+    // Related ticket - https://bugzilla.mozilla.org/show_bug.cgi?id=687787
+    //
+    // Support: Chrome, Safari
+    // focus(in | out) events fire after focus & blur events,
+    // which is spec violation - http://www.w3.org/TR/DOM-Level-3-Events/#events-focusevent-event-order
+    // Related ticket - https://code.google.com/p/chromium/issues/detail?id=449857
     if (!support.focusin)
     {
         jQuery.each({focus: "focusin", blur: "focusout"}, function (orig, fix)
@@ -6910,8 +6910,8 @@
         safeFragment = createSafeFragment(document),
         fragmentDiv = safeFragment.appendChild(document.createElement("div"));
 
-// Support: IE<8
-// Manipulating tables requires a tbody
+    // Support: IE<8
+    // Manipulating tables requires a tbody
     function manipulationTarget(elem, content)
     {
         return jQuery.nodeName(elem, "table") &&
@@ -6922,7 +6922,7 @@
             elem;
     }
 
-// Replace/restore the type attribute of script elements for safe DOM manipulation
+    // Replace/restore the type attribute of script elements for safe DOM manipulation
     function disableScript(elem)
     {
         elem.type = ( jQuery.find.attr(elem, "type") !== null ) + "/" + elem.type;
@@ -7578,7 +7578,7 @@
      * @param {Object} doc Document object
      */
 
-// Called only from within defaultDisplay
+    // Called only from within defaultDisplay
     function actualDisplay(name, doc)
     {
         var elem = jQuery(doc.createElement(name)).appendTo(doc.body),
@@ -8038,7 +8038,7 @@
         emptyStyle = document.createElement("div").style;
 
 
-// return a css property mapped to a potentially vendor prefixed property
+    // return a css property mapped to a potentially vendor prefixed property
     function vendorPropName(name)
     {
 
@@ -8545,7 +8545,7 @@
         }
     );
 
-// These hooks are used by animate to expand properties
+    // These hooks are used by animate to expand properties
     jQuery.each({
         margin: "",
         padding: "",
@@ -8743,8 +8743,8 @@
         }
     };
 
-// Support: IE <=9
-// Panic based approach to setting things on disconnected nodes
+    // Support: IE <=9
+    // Panic based approach to setting things on disconnected nodes
 
     Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
         set: function (tween)
@@ -8770,7 +8770,7 @@
 
     jQuery.fx = Tween.prototype.init;
 
-// Back Compat <1.8 extension point
+    // Back Compat <1.8 extension point
     jQuery.fx.step = {};
 
 
@@ -8779,7 +8779,7 @@
         rfxtypes = /^(?:toggle|show|hide)$/,
         rrun = /queueHooks$/;
 
-// Animations created synchronously will run synchronously
+    // Animations created synchronously will run synchronously
     function createFxNow()
     {
         window.setTimeout(function ()
@@ -8789,7 +8789,7 @@
         return ( fxNow = jQuery.now() );
     }
 
-// Generate parameters to create a standard animation
+    // Generate parameters to create a standard animation
     function genFx(type, includeWidth)
     {
         var which,
@@ -9445,7 +9445,7 @@
         };
     });
 
-// Generate shortcuts for custom animations
+    // Generate shortcuts for custom animations
     jQuery.each({
         slideDown: genFx("show"),
         slideUp: genFx("hide"),
@@ -9526,8 +9526,8 @@
     };
 
 
-// Based off of the plugin by Clint Helfers, with permission.
-// http://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
+    // Based off of the plugin by Clint Helfers, with permission.
+    // http://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/
     jQuery.fn.delay = function (time, type)
     {
         time = jQuery.fx ? jQuery.fx.speeds[time] || time : time;
@@ -9805,7 +9805,7 @@
         }
     });
 
-// Radios and checkboxes getter/setter
+    // Radios and checkboxes getter/setter
     jQuery.each(["radio", "checkbox"], function ()
     {
         jQuery.valHooks[this] = {
@@ -9969,7 +9969,7 @@
         }
     });
 
-// Hooks for boolean attributes
+    // Hooks for boolean attributes
     boolHook = {
         set: function (elem, value, name)
         {
@@ -10034,7 +10034,7 @@
         }
     });
 
-// fix oldIE attroperties
+    // fix oldIE attroperties
     if (!getSetInput || !getSetAttribute)
     {
         jQuery.attrHooks.value = {
@@ -10056,7 +10056,7 @@
         };
     }
 
-// IE6/7 do not support getting/setting some attributes with get/setAttribute
+    // IE6/7 do not support getting/setting some attributes with get/setAttribute
     if (!getSetAttribute)
     {
 
@@ -10250,8 +10250,8 @@
         }
     });
 
-// Some attributes require a special call on IE
-// http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
+    // Some attributes require a special call on IE
+    // http://msdn.microsoft.com/en-us/library/ms536429%28VS.85%29.aspx
     if (!support.hrefNormalized)
     {
 
@@ -10267,12 +10267,12 @@
         });
     }
 
-// Support: Safari, IE9+
-// Accessing the selectedIndex property
-// forces the browser to respect setting selected
-// on the option
-// The getter ensures a default option is selected
-// when in an optgroup
+    // Support: Safari, IE9+
+    // Accessing the selectedIndex property
+    // forces the browser to respect setting selected
+    // on the option
+    // The getter ensures a default option is selected
+    // when in an optgroup
     if (!support.optSelected)
     {
         jQuery.propHooks.selected = {
@@ -10324,7 +10324,7 @@
         jQuery.propFix[this.toLowerCase()] = this;
     });
 
-// IE6/7 call enctype encoding
+    // IE6/7 call enctype encoding
     if (!support.enctype)
     {
         jQuery.propFix.enctype = "encoding";
@@ -10535,7 +10535,7 @@
     });
 
 
-// Return jQuery for attributes-only inclusion
+    // Return jQuery for attributes-only inclusion
 
 
     jQuery.each(( "blur focus focusin focusout load resize scroll unload click dblclick " +
@@ -10620,7 +10620,7 @@
     };
 
 
-// Cross-browser xml parsing
+    // Cross-browser xml parsing
     jQuery.parseXML = function (data)
     {
         var xml, tmp;
@@ -10694,7 +10694,7 @@
         // Segment location into parts
         ajaxLocParts = rurl.exec(ajaxLocation.toLowerCase()) || [];
 
-// Base "constructor" for jQuery.ajaxPrefilter and jQuery.ajaxTransport
+    // Base "constructor" for jQuery.ajaxPrefilter and jQuery.ajaxTransport
     function addToPrefiltersOrTransports(structure)
     {
 
@@ -10736,7 +10736,7 @@
         };
     }
 
-// Base inspection function for prefilters and transports
+    // Base inspection function for prefilters and transports
     function inspectPrefiltersOrTransports(structure, options, originalOptions, jqXHR)
     {
 
@@ -10768,9 +10768,9 @@
         return inspect(options.dataTypes[0]) || !inspected["*"] && inspect("*");
     }
 
-// A special extend for ajax options
-// that takes "flat" options (not to be deep extended)
-// Fixes #9887
+    // A special extend for ajax options
+    // that takes "flat" options (not to be deep extended)
+    // Fixes #9887
     function ajaxExtend(target, src)
     {
         var deep, key,
@@ -11810,8 +11810,8 @@
         }
     }
 
-// Serialize an array of form elements or a set of
-// key/values into a query string
+    // Serialize an array of form elements or a set of
+    // key/values into a query string
     jQuery.param = function (a, traditional)
     {
         var prefix,
@@ -11896,8 +11896,8 @@
     });
 
 
-// Create the request object
-// (This is still attached to ajaxSettings for backward compatibility)
+    // Create the request object
+    // (This is still attached to ajaxSettings for backward compatibility)
     jQuery.ajaxSettings.xhr = window.ActiveXObject !== undefined ?
 
         // Support: IE6-IE8
@@ -11938,9 +11938,9 @@
         xhrCallbacks = {},
         xhrSupported = jQuery.ajaxSettings.xhr();
 
-// Support: IE<10
-// Open requests must be manually aborted on unload (#5280)
-// See https://support.microsoft.com/kb/2856746 for more info
+    // Support: IE<10
+    // Open requests must be manually aborted on unload (#5280)
+    // See https://support.microsoft.com/kb/2856746 for more info
     if (window.attachEvent)
     {
         window.attachEvent("onunload", function ()
@@ -11952,11 +11952,11 @@
         });
     }
 
-// Determine support properties
+    // Determine support properties
     support.cors = !!xhrSupported && ( "withCredentials" in xhrSupported );
     xhrSupported = support.ajax = !!xhrSupported;
 
-// Create transport if the browser can provide an xhr
+    // Create transport if the browser can provide an xhr
     if (xhrSupported)
     {
 
@@ -12141,7 +12141,7 @@
         });
     }
 
-// Functions to create xhrs
+    // Functions to create xhrs
     function createStandardXHR()
     {
         try
@@ -12165,7 +12165,7 @@
     }
 
 
-// Install script dataType
+    // Install script dataType
     jQuery.ajaxSetup({
         accepts: {
             script: "text/javascript, application/javascript, " +
@@ -12183,7 +12183,7 @@
         }
     });
 
-// Handle cache's special case and global
+    // Handle cache's special case and global
     jQuery.ajaxPrefilter("script", function (s)
     {
         if (s.cache === undefined)
@@ -12197,7 +12197,7 @@
         }
     });
 
-// Bind script tag hack transport
+    // Bind script tag hack transport
     jQuery.ajaxTransport("script", function (s)
     {
 
@@ -12271,7 +12271,7 @@
     var oldCallbacks = [],
         rjsonp = /(=)\?(?=&|$)|\?\?/;
 
-// Default jsonp settings
+    // Default jsonp settings
     jQuery.ajaxSetup({
         jsonp: "callback",
         jsonpCallback: function ()
@@ -12282,7 +12282,7 @@
         }
     });
 
-// Detect, normalize options and install callbacks for jsonp requests
+    // Detect, normalize options and install callbacks for jsonp requests
     jQuery.ajaxPrefilter("json jsonp", function (s, originalSettings, jqXHR)
     {
 
@@ -12376,10 +12376,10 @@
     });
 
 
-// data: string of html
-// context (optional): If specified, the fragment will be created in this context,
-// defaults to document
-// keepScripts (optional): If true, will include scripts passed in the html string
+    // data: string of html
+    // context (optional): If specified, the fragment will be created in this context,
+    // defaults to document
+    // keepScripts (optional): If true, will include scripts passed in the html string
     jQuery.parseHTML = function (data, context, keepScripts)
     {
         if (!data || typeof data !== "string")
@@ -12413,7 +12413,7 @@
     };
 
 
-// Keep a copy of the old load method
+    // Keep a copy of the old load method
     var _load = jQuery.fn.load;
 
     /**
@@ -12494,7 +12494,7 @@
     };
 
 
-// Attach a bunch of functions for handling common AJAX events
+    // Attach a bunch of functions for handling common AJAX events
     jQuery.each([
         "ajaxStart",
         "ajaxStop",
@@ -12699,7 +12699,7 @@
         }
     });
 
-// Create scrollLeft and scrollTop methods
+    // Create scrollLeft and scrollTop methods
     jQuery.each({scrollLeft: "pageXOffset", scrollTop: "pageYOffset"}, function (method, prop)
     {
         var top = /Y/.test(prop);
@@ -12733,11 +12733,11 @@
         };
     });
 
-// Support: Safari<7-8+, Chrome<37-44+
-// Add the top/left cssHooks using jQuery.fn.position
-// Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
-// getComputedStyle returns percent when specified for top/left/bottom/right
-// rather than make the css module depend on the offset module, we just check for it here
+    // Support: Safari<7-8+, Chrome<37-44+
+    // Add the top/left cssHooks using jQuery.fn.position
+    // Webkit bug: https://bugs.webkit.org/show_bug.cgi?id=29084
+    // getComputedStyle returns percent when specified for top/left/bottom/right
+    // rather than make the css module depend on the offset module, we just check for it here
     jQuery.each(["top", "left"], function (i, prop)
     {
         jQuery.cssHooks[prop] = addGetHookIf(support.pixelPosition,
@@ -12757,7 +12757,7 @@
     });
 
 
-// Create innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
+    // Create innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
     jQuery.each({Height: "height", Width: "width"}, function (name, type)
     {
         jQuery.each({padding: "inner" + name, content: type, "": "outer" + name},
@@ -12837,7 +12837,7 @@
         }
     });
 
-// The number of elements contained in the matched element set
+    // The number of elements contained in the matched element set
     jQuery.fn.size = function ()
     {
         return this.length;
@@ -12846,18 +12846,18 @@
     jQuery.fn.andSelf = jQuery.fn.addBack;
 
 
-// Register as a named AMD module, since jQuery can be concatenated with other
-// files that may use define, but not via a proper concatenation script that
-// understands anonymous AMD modules. A named AMD is safest and most robust
-// way to register. Lowercase jquery is used because AMD module names are
-// derived from file names, and jQuery is normally delivered in a lowercase
-// file name. Do this after creating the global so that if an AMD module wants
-// to call noConflict to hide this version of jQuery, it will work.
+    // Register as a named AMD module, since jQuery can be concatenated with other
+    // files that may use define, but not via a proper concatenation script that
+    // understands anonymous AMD modules. A named AMD is safest and most robust
+    // way to register. Lowercase jquery is used because AMD module names are
+    // derived from file names, and jQuery is normally delivered in a lowercase
+    // file name. Do this after creating the global so that if an AMD module wants
+    // to call noConflict to hide this version of jQuery, it will work.
 
-// Note that for maximum portability, libraries that are not jQuery should
-// declare themselves as anonymous modules, and avoid setting a global if an
-// AMD loader is present. jQuery is a special case. For more information, see
-// https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
+    // Note that for maximum portability, libraries that are not jQuery should
+    // declare themselves as anonymous modules, and avoid setting a global if an
+    // AMD loader is present. jQuery is a special case. For more information, see
+    // https://github.com/jrburke/requirejs/wiki/Updating-existing-libraries#wiki-anon
 
     if (typeof define === "function" && define.amd)
     {
@@ -12891,9 +12891,9 @@
         return jQuery;
     };
 
-// Expose jQuery and $ identifiers, even in
-// AMD (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
-// and CommonJS for browser emulators (#13566)
+    // Expose jQuery and $ identifiers, even in
+    // AMD (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
+    // and CommonJS for browser emulators (#13566)
     if (!noGlobal)
     {
         window.jQuery = window.$ = jQuery;

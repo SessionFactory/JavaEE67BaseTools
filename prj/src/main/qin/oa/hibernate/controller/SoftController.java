@@ -6,13 +6,16 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import qin.javaee65.core.hibernate.controller.AbstractBaseController;
+import qin.javaee65.core.hibernate.controller.BaseController;
 import qin.oa.hibernate.domain.Software;
 import qin.oa.hibernate.service.SoftwareService;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import static qin.oa.hibernate.HibernateBasePath.objects;
 
@@ -26,7 +29,9 @@ import static qin.oa.hibernate.HibernateBasePath.objects;
 @Scope("prototype")
 @RequestMapping(value = "/soft")
 @SuppressWarnings("all")
-public class SoftController extends AbstractBaseController<Software> implements SoftControllerI
+public class SoftController
+          extends BaseController<Software>
+          implements SoftControllerI
 {
     private static final long serialVersionUID = 7491697672682096675L;
 
@@ -45,7 +50,156 @@ public class SoftController extends AbstractBaseController<Software> implements 
     }
     //endregion
 
-    //region 注入软件打开方式服务层
+    //region 四大操作
+
+    //region 增
+    @RequestMapping(value = "/addSoft")
+    public void addSoft(Software vo, HttpServletResponse response, HttpServletRequest request)
+    {
+        try
+        {
+            actionFlag = true;
+        }
+        catch (Exception ex)
+        {
+            actionFlag = false;
+        }
+        finally
+        {
+            objects.doCheck(actionFlag);
+        }
+    }
+    //endregion
+
+    //region 删
+    @RequestMapping(value = "/delSoft")
+    public void delSoft(Software vo, HttpServletResponse response, HttpServletRequest request)
+    {
+        try
+        {
+            actionFlag = true;
+        }
+        catch (Exception ex)
+        {
+            actionFlag = false;
+        }
+        finally
+        {
+            objects.doCheck(actionFlag);
+        }
+    }
+    //endregion
+
+    //region 改
+    //endregion
+
+    //region 查
+
+    /**
+     * 实现条件查询
+     *
+     * @param vo       软件实体类
+     * @param response 回复
+     * @param request  请求
+     */
+    @RequestMapping(value = "/searchSoft")
+    public void searchSoft(Software vo, HttpServletResponse response, HttpServletRequest request)
+    {
+        try
+        {
+            //传到前台的消息值(success:function(msg){})由ajax做接收并且判断是否成功或失败
+            Map<String, List> msg = softwareService.findByEntityMap(vo);
+
+            String ajaxMsg = "";
+
+            //get key
+            for (Iterator<String> it = msg.keySet().iterator(); it.hasNext(); )
+            {
+                ajaxMsg = it.next();
+            }
+
+            if (ajaxMsg == str_SUCCESS)
+            {
+                StringBuilder htmlSoftTable = softwareService.appendSearchSoftHTML(msg);
+                objects.returnJson(htmlSoftTable.toString(), response);
+            }
+            else
+            {
+                objects.returnJson("没有任何记录!", response);
+            }
+
+            actionFlag = true;
+        }
+        catch (Exception ex)
+        {
+            actionFlag = false;
+        }
+        finally
+        {
+            objects.doCheck(actionFlag);
+        }
+    }
+
+    @RequestMapping(value = "/mySearchPage")
+    public ModelAndView mySearchPage(HttpServletRequest request, StringBuilder msg)
+    {
+        request.setAttribute("msg", msg);
+
+        return new ModelAndView("soft/mySearchPage");
+    }
+
+    //endregion
+
+    //region 查询成功后刷新datagrid
+    /*
+    @RequestMapping(value = "/refreshGrid")
+    public void refreshGrid(HttpServletResponse response, List<Object[]> softList)
+    {
+        try
+        {
+            JSONArray jsonArray = new JSONArray();
+            //map
+            JSONObject object;
+
+            for (int i = 0; i < softList.size(); i++)
+            {
+                Object[] softObjects = softList.get(i);
+
+                object = new JSONObject();
+
+                object.put("soft_name", softObjects[1]);
+                object.put("soft_description", softObjects[2]);
+                object.put("soft_isHidden", softObjects[3]);
+                object.put("soft_createTime", softObjects[4].toString());
+                object.put("soft_location", softObjects[5]);
+                object.put("soft_size", softObjects[6]);
+                object.put("soft_openWays", softObjects[7]);
+                object.put("soft_type", softObjects[8]);
+
+                //将信息写进list
+                jsonArray.add(object);
+            }
+
+            String baseStr = "{\"total\":" + softList.size() + ",\"rows\":";
+            baseStr = baseStr + jsonArray.toString() + "}";
+            objects.returnJson(baseStr, response);
+
+            actionFlag = true;
+        }
+        catch (Exception ex)
+        {
+            //输出异常信息
+            objects.superInfo(ex);
+            actionFlag = false;
+        }
+        finally
+        {
+            objects.doCheck(actionFlag);
+        }
+    }
+    */
+    //endregion
+
     //endregion
 
     //region 返回主页面
@@ -60,6 +214,18 @@ public class SoftController extends AbstractBaseController<Software> implements 
     public ModelAndView doMainView()
     {
         return new ModelAndView("soft/doMainView");
+    }
+    //endregion
+
+    //region 返回bootstrap select页面
+
+    /**
+     * 返回bootstrap select页面
+     */
+    @RequestMapping(value = "/bootstrapSelect")
+    public ModelAndView doSelect()
+    {
+        return new ModelAndView("soft/bootstrapSelect");
     }
     //endregion
 
@@ -197,30 +363,4 @@ public class SoftController extends AbstractBaseController<Software> implements 
         }
     }
     //endregion
-
-    //region 查询软件打开方式信息
-    //endregion
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

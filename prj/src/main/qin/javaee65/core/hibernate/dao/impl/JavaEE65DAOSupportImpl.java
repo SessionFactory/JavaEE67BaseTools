@@ -12,7 +12,9 @@ import qin.javaee65.exceptions.ObjectNotFoundException6;
 
 import javax.annotation.Resource;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 @Repository(value = "objectDAO65")
@@ -245,6 +247,36 @@ public class JavaEE65DAOSupportImpl<T, ID extends Serializable>
     public void setFileLocation(String fileLocation)
     {
         objects.setFileLocation(fileLocation);
+    }
+    //endregion
+
+    //region 6.5新特性
+
+    /**
+     * 拼接查询姓名结果
+     *
+     * @param hqlQuery hql语句
+     * @return 返回拼接的集合
+     * @author qinzhengying
+     * @since 1.6
+     */
+    public List<String> appendNames(String hqlQuery)
+    {
+        List<String> result = new ArrayList<String>();
+
+        //编写hql语句
+        List searchList = getSessionFactory()
+                  .openSession()
+                  .createQuery(hqlQuery)
+                  .list();
+
+        for (Iterator<String> it = searchList.iterator(); it.hasNext(); )
+        {
+            //将名称添加进集合
+            result.add(it.next());
+        }
+
+        return result;
     }
     //endregion
 }

@@ -4,10 +4,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.Test;
 import qin.javaee65.core.Objects;
+import qin.oa.hibernate.dao.SoftwareOpenWaysDAO;
+import qin.oa.hibernate.dao.SoftwareTypeDAO;
 import qin.oa.hibernate.domain.SoftOpenWays;
 import qin.oa.hibernate.domain.SoftType;
 import qin.oa.hibernate.domain.Software;
+import qin.oa.hibernate.service.SoftwareOpenWaysService;
 import qin.oa.hibernate.service.SoftwareService;
+import qin.oa.hibernate.service.SoftwareTypeService;
 
 import static qin.oa.hibernate.HibernateBasePath.log4jPath;
 
@@ -34,6 +38,38 @@ public class SaveSoftType
         String servicePackage = "qin.oa.hibernate.service";
         String poPackage = "qin.oa.hibernate.domain";
         objects.makeService(filePath, "SoftwareOpenWaysService.java", servicePackage, poPackage, SoftOpenWays.class, "SoftwareOpenWaysService", Integer.class);
+    }
+
+    @Test
+    public void makeSoftOpenWaysServiceImpl() throws Exception
+    {
+        String filePath = "D:\\idea15ProjectLocation\\JavaEE67BaseTools\\prj\\src\\main\\qin\\oa\\hibernate\\service\\impl";
+        String servicePackage = "qin.oa.hibernate.service.impl";
+        String poPackage = "qin.oa.hibernate.domain";
+        objects.makeServiceImpl(filePath, "SoftOpenWaysServiceImpl.java", servicePackage, poPackage,
+                                SoftOpenWays.class, "SoftOpenWaysService", Integer.class, "softOpenWaysService65",
+                                SoftwareOpenWaysService.class, SoftwareOpenWaysDAO.class.getSimpleName());
+    }
+
+    @Test
+    public void makeSoftTypeService() throws Exception
+    {
+        String filePath = "D:\\idea15ProjectLocation\\JavaEE67BaseTools\\prj\\src\\main\\qin\\oa\\hibernate\\service";
+        String servicePackage = "qin.oa.hibernate.service";
+        String poPackage = "qin.oa.hibernate.domain";
+        objects.makeService(filePath, "SoftwareTypeService.java", servicePackage,
+                            poPackage, SoftType.class, "SoftwareTypeService", Integer.class);
+    }
+
+    @Test
+    public void makeSoftTypeServiceImpl() throws Exception
+    {
+        String filePath = "D:\\idea15ProjectLocation\\JavaEE67BaseTools\\prj\\src\\main\\qin\\oa\\hibernate\\service\\impl";
+        String servicePackage = "qin.oa.hibernate.service.impl";
+        String poPackage = "qin.oa.hibernate.domain";
+        objects.makeServiceImpl(filePath, "SoftwareTypeServiceImpl.java", servicePackage, poPackage,
+                                SoftType.class, "SoftwareTypeService", Integer.class, "softTypeService65",
+                                SoftwareTypeService.class, SoftwareTypeDAO.class.getSimpleName());
     }
 
     @Test
@@ -73,6 +109,11 @@ public class SaveSoftType
         String[] column_title = new String[]{"编号", "名称", "描述", "是否隐藏", "创建时间", "类型", "位置", "大小", "打开方式"};
         Integer[] column_width = new Integer[]{100, 200, 300, 100, 200, 200, 200, 200, 300};
         objects.superInfo(objects.printDataGrid("软件详细信息", "tb_software", url, 1024, 768, true, true, columns_field, column_title, column_width));
+    }
+
+    @Test
+    public void sqlMake()
+    {
     }
 }
 

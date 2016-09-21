@@ -15,6 +15,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import static java.util.Collections.EMPTY_LIST;
@@ -819,6 +820,29 @@ public class Objects extends JavaEE65BasePrint
         {
             superInfo("生成服务层代码失败" + ex);
         }
+    }
+    //endregion
+
+    //region 6.5新特性
+
+    /**
+     * 拼接html下拉框
+     *
+     * @param names 集合
+     * @return 拼接结果
+     */
+    public StringBuilder appendSelect(List<String> names)
+    {
+        StringBuilder sb = new StringBuilder();
+        int index = 0;
+
+        for (Iterator<String> it = names.iterator(); it.hasNext(); index++)
+        {
+            //换行
+            sb.append("<option value=\"" + index + "\">");
+            sb.append(it.next()).append("</option>");
+        }
+        return sb;
     }
     //endregion
 

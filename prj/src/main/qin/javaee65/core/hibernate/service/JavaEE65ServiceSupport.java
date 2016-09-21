@@ -100,5 +100,18 @@ public interface JavaEE65ServiceSupport<T, ID extends Serializable> extends Java
      * @return 返回查询结果集合
      */
     <E> List<?> findByEntity(T entity, E elements) throws JavaEE6Exception;
+
     //endregion
 }
+
+
+
+
+
+
+
+
+
+
+
+

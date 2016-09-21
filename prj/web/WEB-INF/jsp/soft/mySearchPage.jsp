@@ -40,6 +40,81 @@
             <table id="tb_software"></table>
             <br>
 
+            <!--
+            <div>
+                <style type="text/css">
+                    /*表示是搜索页面的样式*/
+                    .s_titleFont
+                    {
+                        font-family: 微软雅黑;
+                        font-size: 60px;
+                        color: black;
+                        font-weight: bold;
+                    }
+
+                    /*标题样式(第二行)*/
+                    .s_rownum2
+                    {
+                        font-family: 微软雅黑;
+                        font-size: 16px;
+                        color: #039;
+                    }
+
+                    /*表格中内容样式*/
+                    .s_content
+                    {
+                        font-family: 微软雅黑;
+                        font-size: 16px;
+                        color: #C09;
+                    }
+                </style>
+
+                <table width="1750" border="4" bordercolor="#66FF99">
+                    <tr>
+                        <td colspan="9" align="center" class="s_titleFont">软件详细信息:</td>
+                    </tr>
+                    <tr class="s_rownum2" align="center">
+                        <td>编号</td>
+                        <td>名称</td>
+                        <td>描述</td>
+                        <td>是否隐藏</td>
+                        <td>创建时间</td>
+                        <td>类型编号+类型名称</td>
+                        <td>位置</td>
+                        <td>大小(MB)</td>
+                        <td>打开方式编号+名称</td>
+                    </tr>
+                    <tr class="s_content" align="center">
+                        <td>1</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            -->
+
+            <div id="div_mySearch">
+                <%
+                    String msg = request.getParameter("msg");
+
+                    out.println
+                            (
+                                    new StringBuilder()
+                                            .append("<table class=\"easyui-datagrid\" style=\"width:1750;height:250px\"\n")
+                                            .append("    data-options=\"fitColumns:true,singleSelect:true,rownumbers:true\">")
+                                            .append(msg)
+                                            .append("</table>")
+                                            .toString()
+                            );
+                %>
+            </div>
+
         </div>
 
     </div>
@@ -146,12 +221,49 @@
 
 </div>
 
-<!-- 新增对话框 -->
-<div id="dlg_addSoft">
-</div>
-<!-- 新增对话框 -->
-
 </body>
 
-
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

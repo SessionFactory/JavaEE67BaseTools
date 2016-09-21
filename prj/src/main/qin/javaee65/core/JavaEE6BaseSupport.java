@@ -80,6 +80,11 @@ public interface JavaEE6BaseSupport extends Serializable, RandomAccess
      * 空集合
      */
     List empty = EMPTY_LIST;
+
+    /**
+     * sql语句and连接符
+     */
+    String str_and = "AND";
     //endregion
 }
 

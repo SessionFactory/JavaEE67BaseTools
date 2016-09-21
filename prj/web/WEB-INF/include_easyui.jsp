@@ -17,6 +17,7 @@
     <script type="text/javascript" src="<c:url value="/jsLib/easyui/jquery.easyui.min.js"/> "></script>
     <script type="text/javascript" src="<c:url value="/jsLib/easyui/easyui-lang-zh_CN.js"/> "></script>
     <script type="text/javascript" src="<c:url value="/resources/js/qin.main.js"/> "></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/qin.easyui.js"/> "></script>
 
     <link rel="stylesheet" href="<c:url value="/jsLib/easyui/easyui.css"/> ">
     <link rel="stylesheet" href="<c:url value="/jsLib/easyui/color.css"/> ">

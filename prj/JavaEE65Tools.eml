@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="true" jdk="1.6" jdk_type="JavaSDK">
+	<output-test url="file://$MODULE_DIR$/../output/default/test/JavaEE65Tools"/>
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$"/>
+	<lib name="tomcat7x32" scope="PROVIDED"/>
+	<levels>
+		<level name="tomcat7x32" value="application_server_libraries"/>
+		<level name="libs" value="project"/>
+	</levels>
+</component>

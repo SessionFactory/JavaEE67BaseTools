@@ -42,4 +42,5 @@ public interface SoftwareDAO extends JavaEE65DAOSupport<Software, String>
      */
     List<?> searchAll();
     //endregion
+
 }
