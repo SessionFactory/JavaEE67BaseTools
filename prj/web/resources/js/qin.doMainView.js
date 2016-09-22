@@ -26,6 +26,25 @@ $(function ()
             }
         );
         //endregion
+
+        //region 页面一加载就要给下拉框传递数据
+
+        //加载软件打开方式信息
+        iniSoftOpenWaysInfo();
+        //加载软件类型下拉框信息
+        iniSoftTypeInfo();
+
+        //endregion
+
+        //region 加载对话框
+        $("#dlg_addSoft").dialog
+        (
+            {
+                closed: true,
+                closable: true
+            }
+        );
+        //endregion
     }
 );
 //endregion
@@ -55,39 +74,7 @@ function ini_table()
                         {field: 'soft_size', title: '大小', width: 200, align: 'center'},
                         {field: 'soft_openWays', title: '打开方式', width: 300, align: 'center'}
                     ]
-                ],
-            onLoadSuccess: function ()
-            {
-                //region 加载软件打开方式信息
-                //加载软件打开方式信息
-                $.ajax
-                (
-                    {
-                        url: basePath + '/softOpenWays/searchNames.com',
-                        method: 'post',
-                        success: function (msg)
-                        {
-                            //console.log(msg);
-                            $('#soft_openWays2').append(msg);
-                        }
-                    }
-                );//end ajax
-                //endregion
-
-                //region 加载软件类型下拉框信息
-                $.ajax
-                (
-                    {
-                        url: basePath + "/softType/searchNames.com",
-                        method: 'POST',
-                        success: function (msg)
-                        {
-                            $('#soft_type2').append(msg);
-                        }
-                    }
-                );//end ajax
-                //endregion
-            }
+                ]
         }
     );
 
@@ -106,24 +93,6 @@ function ini_table()
             displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录'
         }
     );
-}
-//endregion
-
-//region 增
-function doAdd()
-{
-    //region 初始化对话框
-    $('#dlg_addSoft').dialog
-    (
-        {
-            title: '新增软件信息',
-            width: 1800,
-            height: 600,
-            closed: false,
-            modal: true
-        }
-    );
-    //endregion
 }
 //endregion
 

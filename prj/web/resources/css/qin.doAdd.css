@@ -2,4 +2,30 @@
 .add_titleFont
 {
     font-family: 微软雅黑;
+    font-size: 60px;
+    color: #080808;
+}
+
+.row_titleFont
+{
+    font-family: 微软雅黑;
+    font-size: 28px;
+    color: #0088CC;
+}
+
+/*表格中内容样式*/
+.tb_content
+{
+    font-family: 微软雅黑;
+    font-size: 28px;
+    color: #761c19;
+}
+
+/*表格说明样式*/
+.tb_description
+{
+    font-family: 微软雅黑;
+    font-size: 16px;
+    color: red;
+    font-weight: bold;
 }

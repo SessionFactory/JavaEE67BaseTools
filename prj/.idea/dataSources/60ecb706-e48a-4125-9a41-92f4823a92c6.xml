@@ -114,7 +114,7 @@
     <schema id="37" name="C##OYJR_RZHX">
       <object-id>103</object-id>
       <visible>1</visible>
-      <introspection-timestamp>2016-09-20.10:39:08</introspection-timestamp>
+      <introspection-timestamp>2016-09-22.10:00:18</introspection-timestamp>
     </schema>
     <sequence id="38" parent="1" name="LOGMNR_DIDS$">
       <object-id>1291</object-id>
@@ -8660,7 +8660,7 @@ HINT#</columns>
       <data-type>NUMBER(10)|0</data-type>
     </column>
     <column id="1969" parent="181" name="SOFT_OPENWAYS">
-      <comment>鏉烆垯娆㈤幍鎾崇磻閺傜懓绱￠崥宥囆�</comment>
+      <comment>閺夌儐鍨▎銏ゅ箥閹惧磭纾婚柡鍌滄嚀缁憋繝宕ュ鍥嗭拷</comment>
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(100)|0</data-type>
     </column>
@@ -8687,7 +8687,7 @@ HINT#</columns>
       <data-type>NUMBER(10)|0</data-type>
     </column>
     <column id="1973" parent="182" name="SOFT_TYPE_NAME">
-      <comment>鏉烆垯娆㈢猾璇茬�烽崥宥囆�</comment>
+      <comment>閺夌儐鍨▎銏㈢尵鐠囪尙锟界兘宕ュ鍥嗭拷</comment>
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(30)|0</data-type>
     </column>
@@ -8710,47 +8710,47 @@ HINT#</columns>
       <primary>1</primary>
     </key>
     <column id="1976" parent="183" name="SOFT_ID">
-      <comment>鏉烆垯娆㈢紓鏍у娇 娑撳鏁�</comment>
+      <comment>閺夌儐鍨▎銏㈢磽閺嵮冨▏ 濞戞挸顭烽弫锟�</comment>
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(255)|0</data-type>
     </column>
     <column id="1977" parent="183" name="SOFT_NAME">
-      <comment>鏉烆垯娆㈤崥宥囆�</comment>
+      <comment>閺夌儐鍨▎銏ゅ触瀹ュ泦锟�</comment>
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(50)|0</data-type>
     </column>
     <column id="1978" parent="183" name="SOFT_DESCRIPTION">
-      <comment>鏉烆垯娆㈤幓蹇氬牚</comment>
+      <comment>閺夌儐鍨▎銏ゅ箵韫囨艾鐗�</comment>
       <data-type>VARCHAR2(3000)|0</data-type>
     </column>
     <column id="1979" parent="183" name="SOFT_ISHIDDEN">
-      <comment>鏉烆垯娆㈤弰顖氭儊闂呮劘妫孾0:閸氾拷, 1:閺勭棇</comment>
+      <comment>閺夌儐鍨▎銏ゅ及椤栨碍鍎婇梻鍛姌濡0:闁告熬鎷�, 1:闁哄嫮妫�</comment>
       <data-type>NUMBER(1)|0</data-type>
     </column>
     <column id="1980" parent="183" name="SOFT_CREATETIME">
-      <comment>鏉烆垯娆㈤崚娑樼紦閺冨爼妫�</comment>
+      <comment>閺夌儐鍨▎銏ゅ礆濞戞绱﹂柡鍐ㄧ埣濡拷</comment>
       <data-type>DATE|0</data-type>
     </column>
     <column id="1981" parent="183" name="SOFT_LOCATION">
-      <comment>鏉烆垯娆㈤幍锟介崷銊ょ秴缂冿拷</comment>
+      <comment>閺夌儐鍨▎銏ゅ箥閿熶粙宕烽妸銈囩Т缂傚喛鎷�</comment>
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(300)|0</data-type>
     </column>
     <column id="1982" parent="183" name="SOFT_SIZE">
-      <comment>鏉烆垯娆㈡径褍鐨�(xMB) x閸欘亣鍏橀弰顖涙殶鐎涳拷</comment>
+      <comment>閺夌儐鍨▎銏″緞瑜嶉惃锟�(xMB) x闁告瑯浜ｉ崗姗�寮伴娑欐閻庢冻鎷�</comment>
       <mandatory>1</mandatory>
       <data-type>VARCHAR2(90)|0</data-type>
     </column>
     <column id="1983" parent="183" name="SOFT_TYPE">
-      <comment>鏉烆垯娆㈢猾璇茬�� 婢舵牠鏁�</comment>
+      <comment>閺夌儐鍨▎銏㈢尵鐠囪尙锟斤拷 濠㈣埖鐗犻弫锟�</comment>
       <data-type>NUMBER(10)|0</data-type>
     </column>
     <column id="1984" parent="183" name="SOFT_OPENWAYS">
-      <comment>鏉烆垯娆㈤幍鎾崇磻閺傜懓绱� 婢舵牠鏁�</comment>
+      <comment>閺夌儐鍨▎銏ゅ箥閹惧磭纾婚柡鍌滄嚀缁憋拷 濠㈣埖鐗犻弫锟�</comment>
       <data-type>NUMBER(10)|0</data-type>
     </column>
     <column id="1985" parent="183" name="SOFT_TYPE_SOFT_ID">
-      <comment>鏉烆垯娆㈢猾璇茬�锋径鏍暛</comment>
+      <comment>閺夌儐鍨▎銏㈢尵鐠囪尙锟介攱寰勯弽顓熸殯</comment>
       <data-type>NUMBER(10)|0</data-type>
     </column>
     <index id="1986" parent="183" name="SYS_C0010019">

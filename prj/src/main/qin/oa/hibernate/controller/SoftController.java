@@ -254,10 +254,11 @@ public class SoftController
      * @param response 回复
      * @return 新增页面
      */
+    @RequestMapping(value = "/operations/doAdd")
     @Override
     public ModelAndView add(Software entity, HttpServletResponse response)
     {
-        return null;
+        return new ModelAndView("soft/operations/doAdd");
     }
     //endregion
 

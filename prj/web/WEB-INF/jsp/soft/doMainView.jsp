@@ -5,6 +5,7 @@
     <title></title>
     <jsp:include page="/WEB-INF/include_easyui.jsp"></jsp:include>
     <script type="text/javascript" src="<c:url value="/resources/js/qin.doMainView.js"/> "></script>
+    <script type="text/javascript" src="<c:url value="/resources/js/qin.iniSelect.js"/> "></script>
     <link rel="stylesheet" href="<c:url value="/resources/css/qin.doMainView.css"/> ">
 </head>
 
@@ -16,8 +17,12 @@
      style="padding:5px;background:#eee;height: 3000px;">
     <div class="easyui-layout" style="width: 100%; height: 100%">
         <div data-options="region:'west',title:'导航',split:true" style="width:200px;">
+            <!--
+                    直接访问控制层中的返回新增页面方法(方便之处在于不用写js代码调用此button了)
+                    public ModelAndView add(Software entity, HttpServletResponse response)
+            -->
             <a class="easyui-linkbutton c1" data-options="iconCls:'icon-add'" style="width:150px"
-               id="addSoft" name="addSoft">
+               id="addSoft" name="addSoft" href="/j6/soft/operations/doAdd.com">
                 新增软件信息
             </a>
             <br><br>
@@ -145,11 +150,6 @@
     <br><br>
 
 </div>
-
-<!-- 新增对话框 -->
-<div id="dlg_addSoft">
-</div>
-<!-- 新增对话框 -->
 
 </body>
 
