@@ -14,6 +14,11 @@ $(function ()
         //endregion
 
         //region 删
+        $('#delSoft').click(function ()
+            {
+                deleteSoft();
+            }
+        );
         //endregion
 
         //region 改
@@ -62,6 +67,7 @@ function ini_table()
             width: 1750,
             height: 768,
             pagination: true,
+            singleSelect: false,
             columns://
                 [
                     [
@@ -77,26 +83,33 @@ function ini_table()
                 ]
         }
     );
-
-    //设置分页控件
-    var p = $('#tb_software').datagrid('getPager');
-    $(p).pagination
-    (
-        {
-            //每页显示的记录条数,默认为20
-            pageSize: 20,
-            //可以设置每页记录条数的列表
-            pageList: [40, 80, 200],
-            //页数文本框前显示的汉字
-            beforePageText: '第',
-            afterPageText: '页 共 {pages} 页',
-            displayMsg: '当前显示 {from} - {to} 条记录   共 {total} 条记录'
-        }
-    );
 }
 //endregion
 
 //region 删
+function deleteSoft()
+{
+    var rows = $('#tb_software').datagrid('getSelections');
+    var names = "";
+
+    for (var i = 0; i < rows.length; i++)
+    {
+        names += "'" + rows[i].soft_name + "',";
+    }
+
+    //var doDeleteURL = "";
+
+    $.ajax
+    (
+        {
+            url: basePath + "/soft/delSoft.com?names=" + names,
+            method: 'POST',
+            success: function (msg)
+            {
+            }
+        }
+    )
+}
 //endregion
 
 //region 改

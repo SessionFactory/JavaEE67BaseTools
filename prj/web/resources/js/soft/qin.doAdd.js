@@ -25,7 +25,8 @@ function doAdd()
     var nodes = {
         soft_name: $('#soft_name').val(),
         soft_description: $('#soft_description').val(),
-        soft_isHidden2: $('#soft_isHidden2 option:selected')[0].innerHTML,
+        //soft_isHidden2: $('#soft_isHidden2 option:selected')[0].innerHTML,
+        soft_isHidden2: $('#soft_isHidden2').combobox('getValue'),
         soft_createTime2: $('#soft_createTime2').datetimebox('getValue'),
         soft_type2: $('#soft_type2 option:selected')[0].innerHTML,
         soft_location: $('#soft_location').val(),
@@ -33,7 +34,7 @@ function doAdd()
         soft_openWays2: $('#soft_openWays2 option:selected')[0].innerHTML
     };
 
-    var addURL = basePath + "/soft/addSoft.com?soft_name" + nodes.soft_name +
+    var addURL = basePath + "/soft/addSoft.com?soft_name=" + nodes.soft_name +
         "       &&soft_description=" + nodes.soft_description +
         "       &&soft_isHidden2=" + nodes.soft_isHidden2 +
         "       &&soft_createTime2=" + nodes.soft_createTime2 +
@@ -49,6 +50,15 @@ function doAdd()
             method: 'POST',
             success: function (msg)
             {
+                //alert(msg);
+                if (msg == "success")
+                {
+                    window.location = basePath + "/soft/doMainView.com";
+                }
+                else
+                {
+                    alert(msg);
+                }
             }
         }
     )

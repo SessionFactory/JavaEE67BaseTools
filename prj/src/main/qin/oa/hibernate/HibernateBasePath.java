@@ -11,7 +11,7 @@ import qin.javaee65.core.Objects;
 @SuppressWarnings("all")
 public class HibernateBasePath
 {
-    public static final String log4jPath = "D:\\idea15ProjectLocation\\JavaEE65Tools\\src\\resources\\log4j.properties";
+    public static final String log4jPath = "D:\\idea15ProjectLocation\\JavaEE67BaseTools\\prj\\src\\resources\\log4j.properties";
 
-    public static final Objects objects = new Objects(log4jPath);
+    public static final Objects qinObj = new Objects(log4jPath);
 }

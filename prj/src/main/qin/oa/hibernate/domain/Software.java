@@ -11,7 +11,7 @@ import java.util.Date;
  * @since 1.6
  */
 @SuppressWarnings("all")
-public class Software implements SuperEntity65<String>
+public class Software implements SuperEntity65<Integer>
 {
     private static final long serialVersionUID = -6072068513361923913L;
 
@@ -49,16 +49,16 @@ public class Software implements SuperEntity65<String>
     //endregion
 
     //region 主键
-    private String id;
+    private Integer id;
 
     @Override
-    public String getId()
+    public Integer getId()
     {
         return id;
     }
 
     @Override
-    public void setId(String id)
+    public void setId(Integer id)
     {
         this.id = id;
     }

@@ -17,6 +17,7 @@ import java.util.Comparator;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import static java.util.Collections.EMPTY_LIST;
 import static java.util.UUID.randomUUID;
@@ -90,7 +91,7 @@ public class Objects extends JavaEE65BasePrint
      * Arrays#hashCode(Object[])}.
      * <p>
      * <p>This method is useful for implementing {@link
-     * Object#hashCode()} on objects containing multiple fields. For
+     * Object#hashCode()} on qinObj containing multiple fields. For
      * example, if an object that has three fields, {@code x}, {@code
      * y}, and {@code z}, one could write:
      * <p>
@@ -167,7 +168,7 @@ public class Objects extends JavaEE65BasePrint
      * what ordering policy, if any, the {@link Comparator Comparator}
      * chooses to have for {@code null} values.
      *
-     * @param <T> the type of the objects being compared
+     * @param <T> the type of the qinObj being compared
      * @param a   an object
      * @param b   an object to be compared with {@code a}
      * @param c   the {@code Comparator} to compare the first two arguments
@@ -844,6 +845,33 @@ public class Objects extends JavaEE65BasePrint
         }
         return sb;
     }
+
+    //region 判断字符是否以中文或英文开头
+
+    /**
+     * 是否以中文开头
+     *
+     * @param a
+     * @return
+     */
+    public boolean isChinese(char a)
+    {
+        int v = (int) a;
+        return (v >= 19968 && v <= 171941);
+    }
+
+    /**
+     * 是否以英文开头
+     *
+     * @param s
+     * @return
+     */
+    public boolean checkEnglish(String s)
+    {
+        return Pattern.matches("[A-Za-z]", s);
+    }
+    //endregion
+
     //endregion
 
 }

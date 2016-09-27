@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-import static qin.oa.hibernate.HibernateBasePath.objects;
+import static qin.oa.hibernate.HibernateBasePath.qinObj;
 
 /**
  * 软件打开方式控制层
@@ -54,7 +54,7 @@ public class SoftOpenWaysController
     {
         List<String> names = softOpenWaysService.findOpenWaysNames();
 
-        objects.returnJson(objects.appendSelect(names).toString(), response);
+        qinObj.returnJson(qinObj.appendSelect(names).toString(), response);
     }
     //endregion
 }

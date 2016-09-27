@@ -9,7 +9,6 @@
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>OYJR_RZHX</user-name>
-      <introspection-scope>*:OYJR_RZHX,PUBLIC,SYS,SYSTEM</introspection-scope>
       <resolve-scope>*:OYJR_RZHX,PUBLIC</resolve-scope>
     </data-source>
     <data-source name="localOrcl" uuid="60ecb706-e48a-4125-9a41-92f4823a92c6">
@@ -20,7 +19,6 @@
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>system</user-name>
-      <introspection-scope>*:PUBLIC,SYS,SYSTEM</introspection-scope>
       <resolve-scope>*:PUBLIC,SYSTEM</resolve-scope>
     </data-source>
   </component>

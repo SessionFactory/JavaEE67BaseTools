@@ -171,6 +171,31 @@ public class SoftwareServiceImpl
         return htmlSoftTable;
     }
     //endregion
+
+    //region 保存软件信息
+
+    /**
+     * 保存软件信息
+     *
+     * @param vo 软件实体类
+     * @return
+     */
+    @Override
+    public String saveSoft(Software vo)
+    {
+        return entityDAO.saveSoft(vo);
+    }
+    //endregion
+
+    //region 删除软件信息
+
+    @Override
+    public String doDelete(String names) throws JavaEE6Exception
+    {
+        return entityDAO.doDelete(names);
+    }
+
+    //endregion
 }
 
 //region 注释

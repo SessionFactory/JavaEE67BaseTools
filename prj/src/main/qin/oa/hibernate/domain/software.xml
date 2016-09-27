@@ -15,7 +15,7 @@
     <!-- 软件实体类 -->
     <class name="Software" table="qin_software6">
         <id name="id" column="soft_id">
-            <generator class="uuid"/>
+            <generator class="increment"/>
         </id>
 
         <!-- 名称 -->

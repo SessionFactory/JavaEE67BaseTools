@@ -24,5 +24,4 @@
         <servlet-name>contron</servlet-name>
         <url-pattern>*.com</url-pattern>
     </servlet-mapping>
-
 </web-app>

@@ -17,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import static qin.oa.hibernate.HibernateBasePath.objects;
+import static qin.oa.hibernate.HibernateBasePath.qinObj;
 
 /**
  * 软件控制层实现
@@ -56,8 +56,15 @@ public class SoftController
     @RequestMapping(value = "/addSoft")
     public void addSoft(Software vo, HttpServletResponse response, HttpServletRequest request)
     {
+        String msg = "";
+
         try
         {
+            //实现新增功能并且页面的逻辑操作都交给数据访问层
+            msg = softwareService.saveSoft(vo);
+
+            qinObj.returnJson(msg, response);
+
             actionFlag = true;
         }
         catch (Exception ex)
@@ -66,17 +73,22 @@ public class SoftController
         }
         finally
         {
-            objects.doCheck(actionFlag);
+            qinObj.doCheck(actionFlag);
         }
     }
     //endregion
 
     //region 删
     @RequestMapping(value = "/delSoft")
-    public void delSoft(Software vo, HttpServletResponse response, HttpServletRequest request)
+    public void delSoft(HttpServletResponse response, HttpServletRequest request)
     {
+        String names = "";
+
         try
         {
+            names = request.getParameter("names");
+            String ajaxMsg = softwareService.doDelete(names);
+
             actionFlag = true;
         }
         catch (Exception ex)
@@ -85,7 +97,7 @@ public class SoftController
         }
         finally
         {
-            objects.doCheck(actionFlag);
+            qinObj.doCheck(actionFlag);
         }
     }
     //endregion
@@ -121,11 +133,11 @@ public class SoftController
             if (ajaxMsg == str_SUCCESS)
             {
                 StringBuilder htmlSoftTable = softwareService.appendSearchSoftHTML(msg);
-                objects.returnJson(htmlSoftTable.toString(), response);
+                qinObj.returnJson(htmlSoftTable.toString(), response);
             }
             else
             {
-                objects.returnJson("没有任何记录!", response);
+                qinObj.returnJson("没有任何记录!", response);
             }
 
             actionFlag = true;
@@ -136,7 +148,7 @@ public class SoftController
         }
         finally
         {
-            objects.doCheck(actionFlag);
+            qinObj.doCheck(actionFlag);
         }
     }
 
@@ -182,19 +194,19 @@ public class SoftController
 
             String baseStr = "{\"total\":" + softList.size() + ",\"rows\":";
             baseStr = baseStr + jsonArray.toString() + "}";
-            objects.returnJson(baseStr, response);
+            qinObj.returnJson(baseStr, response);
 
             actionFlag = true;
         }
         catch (Exception ex)
         {
             //输出异常信息
-            objects.superInfo(ex);
+            qinObj.superInfo(ex);
             actionFlag = false;
         }
         finally
         {
-            objects.doCheck(actionFlag);
+            qinObj.doCheck(actionFlag);
         }
     }
     */
@@ -348,19 +360,19 @@ public class SoftController
 
             String baseStr = "{\"total\":" + softList.size() + ",\"rows\":";
             baseStr = baseStr + jsonArray.toString() + "}";
-            objects.returnJson(baseStr, response);
+            qinObj.returnJson(baseStr, response);
 
             actionFlag = true;
         }
         catch (Exception ex)
         {
             //输出异常信息
-            objects.superInfo(ex);
+            qinObj.superInfo(ex);
             actionFlag = false;
         }
         finally
         {
-            objects.doCheck(actionFlag);
+            qinObj.doCheck(actionFlag);
         }
     }
     //endregion

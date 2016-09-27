@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-import static qin.oa.hibernate.HibernateBasePath.objects;
+import static qin.oa.hibernate.HibernateBasePath.qinObj;
 
 /**
  * 软件类型控制层
@@ -59,7 +59,7 @@ public class SoftTypeController
     {
         List<String> names = softTypeService.findSoftTypeNames();
 
-        objects.returnJson(objects.appendSelect(names).toString(), response);
+        qinObj.returnJson(qinObj.appendSelect(names).toString(), response);
     }
     //endregion
 }

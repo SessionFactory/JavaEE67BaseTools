@@ -13,6 +13,8 @@ import qin.oa.hibernate.service.SoftwareOpenWaysService;
 import qin.oa.hibernate.service.SoftwareService;
 import qin.oa.hibernate.service.SoftwareTypeService;
 
+import java.util.Date;
+
 import static qin.oa.hibernate.HibernateBasePath.log4jPath;
 
 @SuppressWarnings("all")
@@ -114,6 +116,23 @@ public class SaveSoftType
     @Test
     public void sqlMake()
     {
+    }
+
+    @Test
+    public void daoSaveSoftTest() throws Exception
+    {
+        Software soft = new Software();
+        soft.setSoft_name("asdfsdfdfsa");
+        soft.setSoft_description("sadffsdafsd");
+        soft.setSoft_isHidden(false);
+        soft.setSoft_createTime(new Date());
+        soft.setSoft_type(session.get(SoftType.class, 5));
+        soft.setSoft_location("asdfasdf");
+        soft.setSoft_size("54235345MB");
+        soft.setSoft_openWays(session.get(SoftOpenWays.class, 2));
+
+        session.save(soft);
+        transaction.commit();
     }
 }
 

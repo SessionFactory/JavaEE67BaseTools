@@ -18,7 +18,7 @@
 <div data-options="region:'center',title:'用户'"
      style="padding:5px;background:#eee;height: 3000px;">
     <%--<form id="addFrm" name="addFrm" action="/j6/soft/addSoft.com">--%>
-    <table width="1750" border="5" bordercolor="blue">
+    <table width="1750" border="10" bordercolor="#CC3366">
         <tr>
             <td colspan="3" class="add_titleFont" align="center">添加软件信息</td>
         </tr>
@@ -59,8 +59,8 @@
             <td class="row_titleFont">是否隐藏</td>
             <td>
                 <select id="soft_isHidden2" name="soft_isHidden2" class="easyui-combobox" style="width:200px;">
-                    <option value="true">是</option>
-                    <option value="false">否</option>
+                    <option value="1">是</option>
+                    <option>否</option>
                 </select>
             </td>
             <td class="tb_description">
@@ -107,7 +107,7 @@
             <td class="tb_description">
                 1.软件大小不能为空!<br>
                 2.长度不能超过90个字符!<br>
-                3.只能以数字开头!
+                3.软件大小必须全部是数字!
             </td>
         </tr>
         <tr align="center">

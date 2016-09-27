@@ -39,4 +39,19 @@ public interface SoftwareService extends JavaEE65ServiceSupport<Software, String
     //region 拼接html datagrid
     StringBuilder appendSearchSoftHTML(Map<String, List> msg);
     //endregion
+
+    //region 保存软件信息
+
+    /**
+     * 保存软件信息
+     *
+     * @param vo 软件实体类
+     * @return
+     */
+    String saveSoft(Software vo);
+    //endregion
+
+    //region 删除软件信息
+    String doDelete(String names) throws JavaEE6Exception;
+    //endregion
 }
